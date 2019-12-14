@@ -1,0 +1,80 @@
+*{
+margin: 0;
+border: 0;
+padding: 0;
+}
+html
+{
+    font-size: 62.5%;
+    /* 1rem=10px    */
+}
+.container
+{
+    display: grid;
+    grid-template-rows: repeat(2,minmax(15vh,min-content)) minmax(70vh,min-content);
+    grid-template-columns: minmax(0rem,1fr) minmax(min-content,1180px) minmax(0rem,1fr);
+    grid-template-areas: " . rgb ."
+                        ". reset ."
+                        ". main .";
+
+}
+.rgb
+{
+    grid-area: rgb;
+    background: orangered;
+    transition: background ease-in-out 1s;
+}
+.rgb h1
+{
+    font-size: 4rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: normal;
+}
+.reset
+{
+    grid-area: reset;
+    background: midnightblue;
+    
+}
+.reset h1
+{
+    padding: 1rem 5rem;
+    background: white;
+    border: 2px solid black
+    /* border-radius: 2rem; */
+}
+
+.main
+{
+   grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+    /* background: green; */
+}
+.flex
+{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.circle
+{
+width: 15rem;
+height: 15rem;
+border-radius: 50%;
+background:  black;
+transition: opacity ease-in-out 1s
+}
+.color
+{
+    border: 1px solid white;
+}
+.main :nth-child(even)
+{
+    background: red;
+}
+.main :nth-child(odd)
+{
+    background: green;
+}
